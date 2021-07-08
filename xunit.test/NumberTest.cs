@@ -12,7 +12,7 @@ namespace xunit.test
         [InlineData(7, -3)]
         [InlineData(-1,5)]
         [InlineData(-2, 6)]
-        public void SuccessTest(int x, int y)
+        public void AddSuccessTest(int x, int y)
         {
             Assert.Equal(4, Add(x,y));
         }
@@ -24,7 +24,8 @@ namespace xunit.test
         [InlineData(7, -3)]
         [InlineData(-1, 5)]
         [InlineData(-2, 6)]
-        public void FailTest(int x, int y)
+        [InlineData(-2, -6)]
+        public void AddFailTest(int x, int y)
         {
             Assert.NotEqual(10, Add(x,y));
         }
