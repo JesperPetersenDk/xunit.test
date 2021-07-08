@@ -17,10 +17,16 @@ namespace xunit.test
             Assert.Equal(4, Add(x,y));
         }
 
-        [Fact]
-        public void FailTest()
+        [Theory]
+        [InlineData(3, 1)]
+        [InlineData(4, 0)]
+        [InlineData(6, -2)]
+        [InlineData(7, -3)]
+        [InlineData(-1, 5)]
+        [InlineData(-2, 6)]
+        public void FailTest(int x, int y)
         {
-            Assert.NotEqual(10, Add(2,4));
+            Assert.NotEqual(10, Add(x,y));
         }
 
 
